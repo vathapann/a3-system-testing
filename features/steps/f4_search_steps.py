@@ -39,14 +39,18 @@ def check_matching_products(context):
         "Expected product cards, but none were found."
     )
 
-
 @then("no product cards should be shown for F4")
 def check_no_product_cards(context):
     page = context.helperfunc.page_source
+
     assert "product-thumb" not in page, (
         "Unexpected product cards appeared for a nonexistent search."
     )
 
+    assert "Your shopping cart is empty!" not in page, (
+        "The search page shows a shopping cart message instead "
+        "of a proper no-results message."
+    )
 
 @then("the F4 search page should open without product cards")
 def check_empty_search(context):
