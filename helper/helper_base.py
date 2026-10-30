@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-BASE_URL = "https://ecommerce-playground.lambdatest.io/index.php?route="
+BASE_URL = "https://opencart.abstracta.us/index.php?route="
 
 
 def unique_email(prefix="tester"):
