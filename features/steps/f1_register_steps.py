@@ -34,9 +34,8 @@ def _fill_form(context, rows):
 
 
 def _tick_privacy_policy(context):
-    # The checkbox is styled by the theme, so clicking its <label> is more
-    # reliable than clicking the hidden <input> itself
-    context.helperfunc.click_by_css("label[for='input-agree']")
+    # The Privacy Policy checkbox has no id on this site, so locate it by name
+    context.helperfunc.click_by_css("input[name='agree']")
 
 
 def _submit(context):

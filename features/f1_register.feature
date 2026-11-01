@@ -1,6 +1,6 @@
 # Tester: Sovatha Pann
 # Function: F1 User Registration
-# URL: https://ecommerce-playground.lambdatest.io/index.php?route=account/register
+# URL: https://opencart.abstracta.us/index.php?route=account/register
 
 Feature: F1 User Registration
   As a new visitor to the store
