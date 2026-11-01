@@ -1,6 +1,6 @@
 # Assignment 3: System Testing (32571 Enterprise Software Testing)
 
-Automated system tests for https://ecommerce-playground.lambdatest.io
+Automated system tests for https://opencart.abstracta.us
 using **Python + Behave (BDD/Gherkin) + Selenium WebDriver**.
 
 ## Who tested what
@@ -22,18 +22,33 @@ Step definitions: `features/steps/fN_<name>_steps.py`. Shared steps: `features/s
 ## Setup
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate          # Windows: .venv\Scripts\activate
+python3 -m venv venv
+source venv/bin/activate           # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
 Google Chrome must be installed. Selenium Manager downloads ChromeDriver automatically.
+
+The site under test is set by `BASE_URL` in `helper/helper_base.py`, and the browser
+by `Browser` in `setup.cfg` (`chrome`, `firefox` or `edge`).
+
+## Test environment (F1–F3)
+
+| Item | Version |
+|---|---|
+| Site under test | https://opencart.abstracta.us (OpenCart demo store) |
+| OS | macOS 27.2 |
+| Browser | Google Chrome 156 (ChromeDriver via Selenium Manager) |
+| Python | 3.14.9 |
+| behave | 1.3.3 |
+| selenium | 4.51.0 |
 
 ## Run
 
 ```bash
 behave                                   # all tests
 behave features/f2_login.feature         # one function
+behave features/f2_login.feature:11      # one scenario (by line number)
 behave --format plain features/          # simpler output for screenshots
 ```
 
